@@ -1,66 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Weather app</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Units
-
-  Switch to Imperial/Metric
-
-  Temperature
-
-  Celsius (°C)
-  Fahrenheit (°F)
-
-  Wind Speed
-
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like
-  <!-- Insert temperature here -->
-
-  Humidity
-  <!-- Insert humidity here -->
-
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
-
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <title>Frontend Mentor | Weather app</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">Weather Now</div>
+                <div class="units-dropdown">Units</div>
+            </header>
+            <main class="main-container">
+                <!-- Main title -->
+                <section class="hero">
+                    <h1 class="hero-title">How's the sky looking today?</h1>
+                    <!-- Search -->
+                    <div class="search-bar">
+                        <input
+                            type="text"
+                            class="search-input"
+                            placeholder="Search for a place..."
+                        />
+                        <button class="search-button">Search</button>
+                    </div>
+                </section>
+                <section class="weather-container">
+                    <!-- Current weather -->
+                    <div class="current-weather-card">
+                        <div class="location-date">
+                            <h2 class="location">Berlin, Germany</h2>
+                            <p class="date">Tuesday, Aug 5, 2025</p>
+                        </div>
+                        <div class="weather-details">
+                            <div class="temperature">20°</div>
+                            <div class="weather-icon"></div>
+                        </div>
+                    </div>
+                    <!-- Weather metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">Feels Like 18°</div>
+                        <div class="metric-card">Humidity 46%</div>
+                        <div class="metric-card">Wind 14 km/h</div>
+                        <div class="metric-card">Precipitation 0 mm</div>
+                    </div>
+                    <!-- Forecasts -->
+                    <div class="forecast-wrapper">
+                        <div class="daily-forecast">
+                            <h3 class="forecast-title">Daily forecast</h3>
+                            <div class="day-cards">
+                                <div class="day-card">Tue 20° 14°</div>
+                                <div class="day-card">Wed 21° 15°</div>
+                                <div class="day-card">Thu 24° 14°</div>
+                                <div class="day-card">Fri 25° 13°</div>
+                                <div class="day-card">Sat 15° 25°</div>
+                                <div class="day-card">Sun 16° 24°</div>
+                                <div class="day-card">Mon 15°</div>
+                            </div>
+                        </div>
+                        <!-- Hourly forecast -->
+                        <div class="hourly-forecast">
+                            <h3 class="forecast-title">Hourly forecast</h3>
+                            <select class="day-selector">
+                                <option>Tuesday</option>
+                            </select>
+                            <div class="hourly-cards">
+                                <div class="hour-card">3 PM 20°</div>
+                                <div class="hour-card">4 PM 20°</div>
+                                <div class="hour-card">5 PM 20°</div>
+                                <div class="hour-card">6 PM 19°</div>
+                                <div class="hour-card">7 PM 18°</div>
+                                <div class="hour-card">8 PM 18°</div>
+                                <div class="hour-card">9 PM 17°</div>
+                                <div class="hour-card">10 PM 17°</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="attribution">
+                    Challenge by
+                    <a href="https://www.frontendmentor.io?ref=challenge"
+                        >Frontend Mentor</a
+                    >. Coded by <a href="#">Your Name Here</a>.
+                </div>
+            </main>
+        </div>
+    </body>
 </html>
