@@ -1,0 +1,20 @@
+/* Tablet and up */
+@media (min-width: 768px) {
+    .search-form {
+        flex-direction: row !important;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Large desktop and up */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1200px;
+    }
+}
