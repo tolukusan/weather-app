@@ -18,8 +18,88 @@
         <div class="wrapper">
             <!-- Header -->
             <header class="header">
-                <div class="logo">Weather Now</div>
-                <div class="units-dropdown">Units</div>
+                <div class="logo">
+                    <div></div>
+                    Weather Now
+                </div>
+                <div class="dropdown-container">
+                    <button class="dropdown-button">
+                        <span class="icon">⚙️</span>
+                        Units
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-header">Switch to Imperial</div>
+
+                        <div class="unit-section">
+                            <div class="section-title">Temperature</div>
+                            <div
+                                class="unit-option selected"
+                                data-unit-type="tempUnit"
+                                data-unit-value="celsius"
+                            >
+                                <span>Celsius (°C)</span>
+                                <span class="checkmark">✔</span>
+                            </div>
+                            <div
+                                class="unit-option"
+                                data-unit-type="tempUnit"
+                                data-unit-value="fahrenheit"
+                            >
+                                <span>Fahrenheit (°F)</span>
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+
+                        <div class="unit-section">
+                            <div class="section-title">Wind Speed</div>
+                            <div
+                                class="unit-option selected"
+                                data-unit-type="windUnit"
+                                data-unit-value="kmh"
+                            >
+                                <span>km/h</span>
+                                <span class="checkmark">✔</span>
+                            </div>
+                            <div
+                                class="unit-option"
+                                data-unit-type="windUnit"
+                                data-unit-value="mph"
+                            >
+                                <span>mph</span>
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+
+                        <div class="unit-section">
+                            <div class="section-title">Precipitation</div>
+                            <div
+                                class="unit-option selected"
+                                data-unit-type="precipUnit"
+                                data-unit-value="mm"
+                            >
+                                <span>mm</span>
+                                <span class="checkmark">✔</span>
+                            </div>
+                            <div
+                                class="unit-option"
+                                data-unit-type="precipUnit"
+                                data-unit-value="inch"
+                            >
+                                <span>inch</span>
+                                <span class="checkmark"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="units-dropdown">
+                    <select id="units-select">
+                        <option value="metric">Metric (°C, km/h, mm)</option>
+                        <option value="imperial">
+                            Imperial (°F, mph, inch)
+                        </option>
+                    </select>
+                </div> -->
             </header>
             <main class="main-container">
                 <!-- Main title -->
@@ -67,13 +147,41 @@
                     <div class="daily-forecast">
                         <h3 class="forecast-title">Daily forecast</h3>
                         <div class="day-cards">
-                            <div class="day-card">Tue 20° 14°</div>
-                            <div class="day-card">Wed 21° 15°</div>
-                            <div class="day-card">Thu 24° 14°</div>
-                            <div class="day-card">Fri 25° 13°</div>
-                            <div class="day-card">Sat 15° 25°</div>
-                            <div class="day-card">Sun 16° 24°</div>
-                            <div class="day-card">Mon 15°</div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon"></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
                         </div>
                     </div>
                     <!-- Hourly forecast -->
