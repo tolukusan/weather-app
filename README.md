@@ -1,6 +1,6 @@
 # Frontend Mentor - Weather app
 
-![Design preview for the Weather app coding challenge](./preview.jpg)
+![Design preview for the Weather app coding challenge](./public//preview.jpg)
 
 ## Welcome! 👋
 
