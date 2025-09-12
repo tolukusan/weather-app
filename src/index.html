@@ -107,7 +107,7 @@
                 <!-- Main title -->
                 <h1 class="hero_title text-center">How's the sky looking today?</h1>
                 <!-- Search -->
-                <form class="search-form">
+                <form class="search-form" id="search-form">
                     <label for="search-input" class="input-wrapper">
                         <span class="search-icon"></span>
                         <input
@@ -117,23 +117,21 @@
                             placeholder="Search for a place..."
                         />
                     </label>
-                    <button type="submit">Search</button>
+                    <button type="submit" id="search-button">Search</button>
                 </form>
             </section>
 
             <section class="weather-container">
                 <!-- Current weather -->
                 <div>
-                    <div class="current-weather-card">
+                    <div class="weather-card">
                         <div>
-                            <div class="location-date">
-                                <h2 class="location">Lagos, Nigeria</h2>
-                                <p class="date">Weekday, MM dd, yyyy</p>
-                            </div>
-                            <div class="weather-details">
-                                <div class="weather-icon"></div>
-                                <div class="temperature">0°</div>
-                            </div>
+                            <h2 class="location">Lagos, Nigeria</h2>
+                            <p class="date">Weekday, MM dd, yyyy</p>
+                        </div>
+                        <div class="weather-details">
+                            <span class="sun-icon" id="weather-icon"></span>
+                            <strong class="temperature">0°</strong>
                         </div>
                     </div>
                     <!-- Weather metrics -->

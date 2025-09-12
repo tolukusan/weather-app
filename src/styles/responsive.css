@@ -1,5 +1,8 @@
 /* Tablet and up */
 @media (min-width: 768px) {
+    /* .hero_title {
+        font-size: 3.5rem;
+    } */
     .search-form {
         flex-direction: row !important;
     }
@@ -7,8 +10,26 @@
 
 /* Desktop and up */
 @media (min-width: 1024px) {
+    .search-form {
+        width: 40.4rem !important;
+    }
+    .hero_title {
+        font-size: 3.5rem !important;
+    }
     .container {
         max-width: 960px;
+    }
+
+    .weather-container {
+        grid-template-columns: 2.5fr 1fr;
+    }
+
+    .weather-card {
+        background-image: url('/assets/images/bg-today-large.svg') !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        padding-inline: 1.5rem;
+        text-align: start !important;
     }
 }
 

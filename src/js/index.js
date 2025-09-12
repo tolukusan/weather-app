@@ -3,13 +3,14 @@
 // Constants for API endpoints
 const GEO_API_URL = 'https://geocoding-api.open-meteo.com/v1/search';
 const WEATHER_API_URL = 'https://api.open-meteo.com/v1/forecast';
-const USE_TEST_DATA = false;
+const USE_TEST_DATA = true;
 
 const geoCache = new Map();
 
 // DOM Elements
-const searchInput = document.querySelector('.search-input');
-const searchButton = document.querySelector('.search-button');
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const searchForm = document.getElementById('search-form');
 // const unitsDropdown = document.querySelector(".units-dropdown");
 const locationElem = document.querySelector('.location');
 const dateElem = document.querySelector('.date');
@@ -214,7 +215,8 @@ function updateHourly(hourly, selectedDate) {
 }
 
 // Event Listeners
-searchButton.addEventListener('click', async () => {
+searchForm.addEventListener('submit', async e => {
+    e.preventDefault();
     const city = searchInput.value.trim();
     if (!city) {
         showError('Please enter a city name');
@@ -224,10 +226,10 @@ searchButton.addEventListener('click', async () => {
     try {
         let weatherData = null;
         if (USE_TEST_DATA) {
-            const cityResponse = await fetch('./city-test-data.json');
+            const cityResponse = await fetch('/data/city-test-data.json');
             const sampleCityData = await cityResponse.json();
             currentLocation = sampleCityData.results[0];
-            const weatherResponse = await fetch('./weather-test-data.json');
+            const weatherResponse = await fetch('/data/weather-test-data.json');
             weatherData = await weatherResponse.json();
         } else {
             currentLocation = await geocode(city);
@@ -312,6 +314,6 @@ unitOptions.forEach(option => {
 
 // Initial Load (optional)
 document.addEventListener('DOMContentLoaded', () => {
-    searchInput.value = ''; // Default city
+    searchInput.value = 'Berlin'; // Default city
     searchButton.click();
 });
