@@ -1,0 +1,324 @@
+/* ---------- Base styles (mobile-first) ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #0b0e2a;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-button {
+    background: #1c1f3a;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background: #1c1f3a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero + search */
+.hero {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #1c1f3a;
+    color: #fff;
+}
+
+.search-button {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: #4461f2;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.search-button:hover {
+    background: #3650d1;
+}
+
+/* Weather container */
+.weather-container {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 2rem;
+}
+
+/* Current weather */
+.current-weather-card {
+    background: linear-gradient(145deg, #3a42d0, #2f3a7a);
+    border-radius: 20px;
+    padding: 5rem 2rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    background: rgba(58, 66, 208, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(16px) saturate(150%);
+}
+
+.current-weather-card > div {
+    display: flex;
+    justify-content: space-between;
+}
+.location-date h2 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.location-date p {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.location-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.weather-details {
+    display: flex;
+    align-items: center;
+}
+
+.temperature {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+/* Metrics */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.current-metrics {
+    border-radius: 12px;
+    padding: 2rem 2rem;
+    text-align: center;
+    font-size: 1.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px) saturate(140%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.current-metrics :first-child {
+    padding-bottom: 2rem;
+}
+
+.metric-card {
+    font-size: 2.5rem;
+}
+
+/* Daily forecast */
+.daily-forecast {
+    margin-bottom: 1.5rem;
+}
+
+.forecast-title {
+    margin-bottom: 0.8rem;
+}
+
+.day-cards {
+    gap: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+}
+
+.day-card {
+    background: #1c1f3a;
+    border-radius: 12px;
+    padding: 0.8rem;
+    min-width: 80px;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+
+/* Hourly forecast */
+.hourly-forecast {
+    border-radius: 20px;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px) saturate(140%);
+}
+
+.day-selector {
+    background: #2c2f52;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.hourly-cards {
+    gap: 1rem;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));
+}
+
+.hour-card {
+    background: #2c2f52;
+    border-radius: 5px;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px) saturate(130%);
+    font-size: 1.25rem;
+}
+
+.hour-card:first-child {
+    display: flex;
+}
+
+.weather-icon {
+    padding-right: 1rem;
+}
+
+/* Attribution */
+.attribution {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    color: #aaa;
+}
+
+.attribution a {
+    color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large screens (≥1024px) */
+@media (min-width: 1024px) {
+    .wrapper {
+        padding: 2rem;
+    }
+
+    .search-bar {
+        max-width: 700px;
+        margin: 0 auto 2rem;
+    }
+}
+
+/* changes */
+/* Glass effect utility */
+.glass {
+    background: rgba(255, 255, 255, 0.08); /* light transparent */
+    border-radius: 16px;
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown button + panel */
+.dropdown-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 0.5rem 0.8rem;
+}
+
+.dropdown-content {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Daily cards */
+.day-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px) saturate(140%);
+}

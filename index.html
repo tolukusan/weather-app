@@ -13,6 +13,7 @@
         />
 
         <title>Frontend Mentor | Weather app</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <div class="wrapper">
@@ -117,111 +118,145 @@
                 </div>
                 <section class="weather-container">
                     <!-- Current weather -->
-                    <div class="current-weather-card">
-                        <div class="location-date">
-                            <h2 class="location">Lagos, Nigeria</h2>
-                            <p class="date">Weekday, MM dd, yyyy</p>
-                        </div>
-                        <div class="weather-details">
-                            <div class="temperature">0°</div>
-                            <div class="weather-icon"></div>
-                        </div>
-                    </div>
-                    <!-- Weather metrics -->
-                    <div class="metrics-grid">
-                        <div class="metric-card" data-metric="feels">
-                            Feels Like x°
-                        </div>
-                        <div class="metric-card" data-metric="humidity">
-                            Humidity x%
-                        </div>
-                        <div class="metric-card" data-metric="wind">
-                            Wind x km/h
-                        </div>
-                        <div class="metric-card" data-metric="precipitation">
-                            Precipitation x mm
-                        </div>
-                    </div>
-                    <!-- Forecasts -->
-
-                    <div class="daily-forecast">
-                        <h3 class="forecast-title">Daily forecast</h3>
-                        <div class="day-cards">
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
+                    <div>
+                        <div class="current-weather-card">
+                            <div>
+                                <div class="location-date">
+                                    <h2 class="location">Lagos, Nigeria</h2>
+                                    <p class="date">Weekday, MM dd, yyyy</p>
+                                </div>
+                                <div class="weather-details">
+                                    <div class="weather-icon"></div>
+                                    <div class="temperature">0°</div>
+                                </div>
                             </div>
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
+                        </div>
+                        <!-- Weather metrics -->
+                        <div class="metrics-grid">
+                            <div class="current-metrics">
+                                <div>Feels Like</div>
+                                <div class="metric-card" data-metric="feels">
+                                    -
+                                </div>
                             </div>
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
+                            <div class="current-metrics">
+                                <div>Humidity</div>
+                                <div class="metric-card" data-metric="humidity">
+                                    -
+                                </div>
                             </div>
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
+                            <div class="current-metrics">
+                                <div>Wind</div>
+                                <div class="metric-card" data-metric="wind">
+                                    -
+                                </div>
                             </div>
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
+                            <div class="current-metrics">
+                                <div>Precipitation</div>
+                                <div
+                                    class="metric-card"
+                                    data-metric="precipitation"
+                                >
+                                    -
+                                </div>
                             </div>
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
-                            </div>
-                            <div class="day-card">
-                                <div class="weekday"></div>
-                                <div class="weather-icon"></div>
-                                <div class="temp daily-high-low"></div>
+                        </div>
+                        <!-- Forecasts -->
+                        <div class="daily-forecast">
+                            <h3 class="forecast-title">Daily forecast</h3>
+                            <div class="day-cards">
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
+                                <div class="day-card">
+                                    <div class="weekday"></div>
+                                    <div class="weather-icon"></div>
+                                    <div class="temp daily-high-low"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Hourly forecast -->
                     <div class="hourly-forecast">
-                        <h3 class="forecast-title">Hourly forecast</h3>
-                        <select class="day-selector"></select>
+                        <div>
+                            <h3 class="forecast-title">Hourly forecast</h3>
+                            <select class="day-selector"></select>
+                        </div>
                         <div class="hourly-cards">
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                             <div class="hour-card">
-                                <div class="weather-icon"></div>
-                                <div class="time hourly-time"></div>
+                                <div>
+                                    <div class="weather-icon"></div>
+                                    <div class="time hourly-time"></div>
+                                </div>
                                 <div class="temp hourly-temp"></div>
                             </div>
                         </div>

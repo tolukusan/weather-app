@@ -78,7 +78,7 @@ async function geocode(query) {
     const data = await response.json();
     if (!data.results || data.results.length === 0)
         throw new Error("City not found");
-    console.log(data.results[0]);
+    console.log("Geo code json: ", data.results[0]);
     geoCache.set(query, data.results[0]);
     return data.results[0]; // {latitude, longitude, name, country}
 }
@@ -89,7 +89,7 @@ async function fetchWeather(lat, lon, units) {
     // const precipUnit = units === "metric" ? "mm" : "inch";
     const url = `${WEATHER_API_URL}?latitude=${lat}&longitude=${lon}&&daily=temperature_2m_max,temperature_2m_min,weather_code&hourly=temperature_2m,relative_humidity_2m,precipitation,weather_code,surface_pressure,wind_speed_10m,uv_index,visibility,apparent_temperature&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,rain,weather_code,wind_speed_10m,surface_pressure&temperature_unit=${units.tempUnit}&precipitation_unit=${units.precipUnit}&wind_speed_unit=${units.windUnit}`;
 
-    console.log(url);
+    console.log("weather api: ", url);
     const response = await fetch(url);
     if (!response.ok) throw new Error("Weather data unavailable");
     return await response.json();
@@ -102,9 +102,30 @@ function getWeatherDescription(code) {
         1: "Mainly clear",
         2: "Partly cloudy",
         3: "Overcast",
+        45: "Fog",
+        48: "Rime fog",
+        51: "Light drizzle",
+        53: "Mod. drizzle",
+        55: "Dense drizzle",
+        56: "Light freezing drizzle",
+        57: "Dense freezing drizzle",
         61: "Slight rain",
-        63: "Moderate rain",
+        63: "Mod. rain",
+        65: "Heavy rain",
+        66: "Light freezing rain",
+        67: "Heavy freezing rain",
+        71: "Slight snow fall",
+        73: "Mod. snow fall",
+        75: "Heavy snow fall",
+        77: "Snow grains",
         80: "Slight rain showers",
+        81: "Mod. rain showers",
+        82: "Violent rain showers",
+        85: "Slight snow showers",
+        86: "Heavy snow showers",
+        95: "Thunderstorm",
+        96: "Thunderstorm with slight hail",
+        99: "Thunderstorm with heavy hail",
     };
     return codes[code] || "Unknown";
 }
@@ -115,7 +136,7 @@ function updateUI(data) {
     const hourly = data.hourly;
     const daily = data.daily;
     const current_units = data.current_units;
-    console.log("updateUi", current);
+    console.log("current update ui weather info json: ", current);
     // Current Weather
     locationElem.textContent = `${currentLocation.name}, ${
         currentLocation.country || ""
@@ -134,18 +155,12 @@ function updateUI(data) {
     // const currentHourIndex = hourly.time.findIndex(
     //     (time) => time === current.time
     // );
-    feelsCard.textContent = `Feels Like ${formatTemp(
-        current.apparent_temperature
-    )}`;
-    humidityCard.textContent = `Humidity ${formatPercent(
-        current.relative_humidity_2m
-    )}`;
-    windCard.textContent = `Wind ${formatWind(current.wind_speed_10m)} ${
+    feelsCard.textContent = `${formatTemp(current.apparent_temperature)}`;
+    humidityCard.textContent = `${formatPercent(current.relative_humidity_2m)}`;
+    windCard.textContent = `${formatWind(current.wind_speed_10m)} ${
         current_units.wind_speed_10m
     }`;
-    precipitationCard.textContent = `Precipitation ${formatPrecip(
-        current.precipitation
-    )}`;
+    precipitationCard.textContent = `${formatPrecip(current.precipitation)}`;
 
     // Update Daily Forecast
     updateDaily(daily);
@@ -235,7 +250,6 @@ searchButton.addEventListener("click", async () => {
             currentLocation = sampleCityData.results[0];
             const weatherResponse = await fetch("./weather-test-data.json");
             weatherData = await weatherResponse.json();
-            console.log(currentLocation, weatherData);
         } else {
             currentLocation = await geocode(city);
             weatherData = await fetchWeather(
