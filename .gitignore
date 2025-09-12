@@ -39,5 +39,7 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-#Thinking process
+#Local info not important to the project
 TODO.md
+weather-test-data.json
+city-test-data.json

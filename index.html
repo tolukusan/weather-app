@@ -39,20 +39,28 @@
                     <!-- Current weather -->
                     <div class="current-weather-card">
                         <div class="location-date">
-                            <h2 class="location">Berlin, Germany</h2>
-                            <p class="date">Tuesday, Aug 5, 2025</p>
+                            <h2 class="location">Lagos, Nigeria</h2>
+                            <p class="date">Weekday, MM dd, yyyy</p>
                         </div>
                         <div class="weather-details">
-                            <div class="temperature">20°</div>
+                            <div class="temperature">0°</div>
                             <div class="weather-icon"></div>
                         </div>
                     </div>
                     <!-- Weather metrics -->
                     <div class="metrics-grid">
-                        <div class="metric-card">Feels Like 18°</div>
-                        <div class="metric-card">Humidity 46%</div>
-                        <div class="metric-card">Wind 14 km/h</div>
-                        <div class="metric-card">Precipitation 0 mm</div>
+                        <div class="metric-card" data-metric="feels">
+                            Feels Like x°
+                        </div>
+                        <div class="metric-card" data-metric="humidity">
+                            Humidity x%
+                        </div>
+                        <div class="metric-card" data-metric="wind">
+                            Wind x km/h
+                        </div>
+                        <div class="metric-card" data-metric="precipitation">
+                            Precipitation x mm
+                        </div>
                     </div>
                     <!-- Forecasts -->
 
@@ -71,18 +79,43 @@
                     <!-- Hourly forecast -->
                     <div class="hourly-forecast">
                         <h3 class="forecast-title">Hourly forecast</h3>
-                        <select class="day-selector">
-                            <option>Tuesday</option>
-                        </select>
+                        <select class="day-selector"></select>
                         <div class="hourly-cards">
-                            <div class="hour-card">3 PM 20°</div>
-                            <div class="hour-card">4 PM 20°</div>
-                            <div class="hour-card">5 PM 20°</div>
-                            <div class="hour-card">6 PM 19°</div>
-                            <div class="hour-card">7 PM 18°</div>
-                            <div class="hour-card">8 PM 18°</div>
-                            <div class="hour-card">9 PM 17°</div>
-                            <div class="hour-card">10 PM 17°</div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
+                            <div class="hour-card">
+                                <div class="weather-icon"></div>
+                                <div class="time hourly-time"></div>
+                                <div class="temp hourly-temp"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -94,5 +127,6 @@
                 </div>
             </main>
         </div>
+        <script type="module" src="index.js"></script>
     </body>
 </html>
