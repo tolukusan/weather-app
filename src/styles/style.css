@@ -149,6 +149,12 @@ header {
     button:hover {
         background-color: var(--blue-700);
     }
+
+    button:focus {
+        background-color: var(--blue-500);
+        outline: 1px solid var(--blue-500);
+        outline-offset: 2px;
+    }
 }
 
 .search-button:hover {
