@@ -15,14 +15,13 @@ const searchForm = document.getElementById('search-form');
 const locationElem = document.querySelector('.location');
 const dateElem = document.querySelector('.date');
 const temperatureElem = document.querySelector('.temperature');
-const weatherIconElem = document.querySelector('.weather-icon');
 const metricCards = document.querySelectorAll('.metric-card');
 const feelsCard = document.querySelector('[data-metric="feels"]');
 const humidityCard = document.querySelector('[data-metric="humidity"]');
 const windCard = document.querySelector('[data-metric="wind"]');
 const precipitationCard = document.querySelector('[data-metric="precipitation"]');
 const dayCards = document.querySelectorAll('.day-card');
-const daySelector = document.querySelector('.day-selector');
+const daySelector = document.getElementById('select');
 const hourlyCards = document.querySelectorAll('.hour-card');
 
 // State
@@ -89,41 +88,6 @@ async function fetchWeather(lat, lon, units) {
     return await response.json();
 }
 
-// Weather Code to Description (simplified)
-function getWeatherDescription(code) {
-    const codes = {
-        0: 'Clear sky',
-        1: 'Mainly clear',
-        2: 'Partly cloudy',
-        3: 'Overcast',
-        45: 'Fog',
-        48: 'Rime fog',
-        51: 'Light drizzle',
-        53: 'Mod. drizzle',
-        55: 'Dense drizzle',
-        56: 'Light freezing drizzle',
-        57: 'Dense freezing drizzle',
-        61: 'Slight rain',
-        63: 'Mod. rain',
-        65: 'Heavy rain',
-        66: 'Light freezing rain',
-        67: 'Heavy freezing rain',
-        71: 'Slight snow fall',
-        73: 'Mod. snow fall',
-        75: 'Heavy snow fall',
-        77: 'Snow grains',
-        80: 'Slight rain showers',
-        81: 'Mod. rain showers',
-        82: 'Violent rain showers',
-        85: 'Slight snow showers',
-        86: 'Heavy snow showers',
-        95: 'Thunderstorm',
-        96: 'Thunderstorm with slight hail',
-        99: 'Thunderstorm with heavy hail',
-    };
-    return codes[code] || 'Unknown';
-}
-
 // Update UI
 function updateUI(data) {
     const current = data.current;
@@ -140,8 +104,10 @@ function updateUI(data) {
         year: 'numeric',
     });
 
+    const weatherIcon = document.getElementById('weather-icon');
+    weatherIcon.setAttribute('data-weather-code', current.weather_code);
+
     temperatureElem.textContent = formatTemp(current.temperature_2m);
-    weatherIconElem.textContent = getWeatherDescription(current.weather_code); // Placeholder; use icons later
 
     // Metrics
     // const currentHourIndex = hourly.time.findIndex(
@@ -184,8 +150,18 @@ function updateDaily(dailyData) {
             const lowTemp = formatTemp(dailyData.temperature_2m_min[i]);
 
             weekdayElem.textContent = dayName;
-            weatherIconElem.textContent = getWeatherDescription(dailyData.weather_code[i]);
-            dailyHighLowElem.textContent = `${highTemp}  ${lowTemp}`;
+            weatherIconElem.setAttribute('data-weather-code', dailyData.weather_code[i]);
+
+            const highTempDiv = document.createElement('div');
+            const lowTempDiv = document.createElement('div');
+
+            highTempDiv.textContent = `${highTemp}`;
+            lowTempDiv.textContent = `${lowTemp}`;
+            while (dailyHighLowElem.firstChild) {
+                dailyHighLowElem.removeChild(dailyHighLowElem.firstChild);
+            }
+            dailyHighLowElem.appendChild(highTempDiv);
+            dailyHighLowElem.appendChild(lowTempDiv);
         }
     });
 }
@@ -196,18 +172,17 @@ function updateHourly(hourly, selectedDate) {
 
     hourlyCards.forEach((card, i) => {
         if (i < 24) {
-            const weatherIconDiv = card.querySelector('.weather-icon');
+            const weatherIconElem = card.querySelector('.weather-icon');
             const timeDiv = card.querySelector('.hourly-time');
             const tempDiv = card.querySelector('.hourly-temp');
 
-            const weatherDesc = getWeatherDescription(hourly.weather_code[startIndex + i]);
             const time = new Date(hourly.time[startIndex + i]).toLocaleTimeString('en-US', {
                 hour: 'numeric',
                 hour12: true,
             });
-
             const hourlyTemp = formatTemp(hourly.temperature_2m[startIndex + i]);
-            weatherIconDiv.textContent = weatherDesc;
+
+            weatherIconElem.setAttribute('data-weather-code', hourly.weather_code[startIndex + i]);
             timeDiv.textContent = time;
             tempDiv.textContent = hourlyTemp;
         }
@@ -270,7 +245,7 @@ const unitOptions = document.querySelectorAll('.unit-option');
 
 // Toggle dropdown visibility
 dropdownButton.addEventListener('click', e => {
-    dropdownContent.classList.toggle('show');
+    dropdownContent.classList.toggle('active');
     e.stopPropagation(); // Prevents click from bubbling up to the document
 });
 

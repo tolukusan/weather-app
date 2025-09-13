@@ -1,0 +1,59 @@
+.weather-icon {
+    width: 50px; /* Or whatever size you need */
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.weather-icon[data-weather-code='0'],
+.weather-icon[data-weather-code='1'] {
+    background-image: url('/assets/images/icon-sunny.webp');
+}
+
+.weather-icon[data-weather-code='2'] {
+    background-image: url('/assets/images/icon-partly-cloudy.webp');
+}
+
+.weather-icon[data-weather-code='3'] {
+    background-image: url('/assets/images/icon-overcast.webp');
+}
+
+.weather-icon[data-weather-code='45'],
+.weather-icon[data-weather-code='48'] {
+    background-image: url('/assets/images/icon-fog.webp');
+}
+
+.weather-icon[data-weather-code='51'],
+.weather-icon[data-weather-code='53'],
+.weather-icon[data-weather-code='55'],
+.weather-icon[data-weather-code='56'],
+.weather-icon[data-weather-code='57'] {
+    background-image: url('/assets/images/icon-drizzle.webp');
+}
+
+.weather-icon[data-weather-code='61'],
+.weather-icon[data-weather-code='63'],
+.weather-icon[data-weather-code='65'],
+.weather-icon[data-weather-code='66'],
+.weather-icon[data-weather-code='67'],
+.weather-icon[data-weather-code='80'],
+.weather-icon[data-weather-code='81'],
+.weather-icon[data-weather-code='82'] {
+    background-image: url('/assets/images/icon-rain.webp');
+}
+
+.weather-icon[data-weather-code='71'],
+.weather-icon[data-weather-code='73'],
+.weather-icon[data-weather-code='75'],
+.weather-icon[data-weather-code='77'],
+.weather-icon[data-weather-code='85'],
+.weather-icon[data-weather-code='86'] {
+    background-image: url('/assets/images/icon-snow.webp');
+}
+
+.weather-icon[data-weather-code='95'],
+.weather-icon[data-weather-code='96'],
+.weather-icon[data-weather-code='99'] {
+    background-image: url('/assets/images/icon-storm.webp');
+}

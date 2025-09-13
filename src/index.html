@@ -31,9 +31,9 @@
 
             <div class="dropdown-container">
                 <button class="dropdown-button">
-                    <span class="icon">⚙️</span>
+                    <span class="settings-icon"> </span>
                     Units
-                    <span class="arrow">▼</span>
+                    <span class="arrow-icon"></span>
                 </button>
                 <div class="dropdown-content">
                     <div class="dropdown-header">Switch to Imperial</div>
@@ -46,7 +46,7 @@
                             data-unit-value="celsius"
                         >
                             <span>Celsius (°C)</span>
-                            <span class="checkmark">✔</span>
+                            <span class="checkmark-icon"></span>
                         </div>
                         <div
                             class="unit-option"
@@ -54,9 +54,10 @@
                             data-unit-value="fahrenheit"
                         >
                             <span>Fahrenheit (°F)</span>
-                            <span class="checkmark"></span>
+                            <span class="checkmark-icon"></span>
                         </div>
                     </div>
+                    <hr />
 
                     <div class="unit-section">
                         <div class="section-title">Wind Speed</div>
@@ -66,13 +67,14 @@
                             data-unit-value="kmh"
                         >
                             <span>km/h</span>
-                            <span class="checkmark">✔</span>
+                            <span class="checkmark-icon"></span>
                         </div>
                         <div class="unit-option" data-unit-type="windUnit" data-unit-value="mph">
                             <span>mph</span>
-                            <span class="checkmark"></span>
+                            <span class="checkmark-icon"></span>
                         </div>
                     </div>
+                    <hr />
 
                     <div class="unit-section">
                         <div class="section-title">Precipitation</div>
@@ -82,23 +84,15 @@
                             data-unit-value="mm"
                         >
                             <span>mm</span>
-                            <span class="checkmark">✔</span>
+                            <span class="checkmark-icon"></span>
                         </div>
                         <div class="unit-option" data-unit-type="precipUnit" data-unit-value="inch">
                             <span>inch</span>
-                            <span class="checkmark"></span>
+                            <span class="checkmark-icon"></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="units-dropdown">
-                <select id="units-select">
-                    <option value="metric">Metric (°C, km/h, mm)</option>
-                    <option value="imperial">
-                        Imperial (°F, mph, inch)
-                    </option>
-                </select>
-            </div> -->
         </header>
 
         <!-- Main content -->
@@ -123,14 +117,18 @@
 
             <section class="weather-container">
                 <!-- Current weather -->
-                <div>
+                <div class="current-section">
                     <div class="weather-card">
                         <div>
                             <h2 class="location">Lagos, Nigeria</h2>
                             <p class="date">Weekday, MM DD, YYYY</p>
                         </div>
                         <div class="weather-details">
-                            <span class="sun-icon" id="weather-icon"></span>
+                            <span
+                                class="weather-icon weather-icon--main"
+                                id="weather-icon"
+                                data-weather-code=""
+                            ></span>
                             <strong class="temperature">0°</strong>
                         </div>
                     </div>
@@ -155,41 +153,41 @@
                     </div>
                     <!-- Forecasts -->
                     <div class="daily-forecast">
-                        <h3 class="forecast-title">Daily forecast</h3>
+                        <h2 class="forecast-title">Daily forecast</h2>
                         <div class="day-cards">
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                             <div class="day-card">
                                 <div class="weekday"></div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="temp daily-high-low"></div>
                             </div>
                         </div>
@@ -197,56 +195,56 @@
                 </div>
                 <!-- Hourly forecast -->
                 <div class="hourly-forecast">
-                    <div>
+                    <div class="hour-forecast-heading">
                         <h3 class="forecast-title">Hourly forecast</h3>
-                        <select class="day-selector"></select>
+                        <select id="select" class="day-selector"></select>
                     </div>
                     <div class="hourly-cards">
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
                         </div>
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
                         </div>
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
                         </div>
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
                         </div>
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
                         </div>
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
                         </div>
                         <div class="hour-card">
                             <div>
-                                <div class="weather-icon"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
                                 <div class="time hourly-time"></div>
                             </div>
                             <div class="temp hourly-temp"></div>
