@@ -3,7 +3,7 @@
 // Constants for API endpoints
 const GEO_API_URL = 'https://geocoding-api.open-meteo.com/v1/search';
 const WEATHER_API_URL = 'https://api.open-meteo.com/v1/forecast';
-const USE_TEST_DATA = true;
+const USE_TEST_DATA = false;
 
 const geoCache = new Map();
 
