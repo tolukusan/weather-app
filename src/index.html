@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Frontend Mentor | Weather app</title>
+        <link rel="stylesheet" href="./styles/style.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="container">
+            <!-- Logo -->
+            <div>
+                <img
+                    src="/assets/images/logo.svg"
+                    alt="Weather Now"
+                    aria-label="Weather now logo"
+                />
+                <span class="sr-only">Weather Now</span>
+            </div>
+
+            <div class="dropdown-container">
+                <button class="dropdown-button">
+                    <span class="settings-icon"> </span>
+                    Units
+                    <span class="arrow-icon"></span>
+                </button>
+                <div class="dropdown-content">
+                    <div class="dropdown-header">Switch to Imperial</div>
+
+                    <div class="unit-section">
+                        <div class="section-title">Temperature</div>
+                        <div
+                            class="unit-option selected"
+                            data-unit-type="tempUnit"
+                            data-unit-value="celsius"
+                        >
+                            <span>Celsius (°C)</span>
+                            <span class="checkmark-icon"></span>
+                        </div>
+                        <div
+                            class="unit-option"
+                            data-unit-type="tempUnit"
+                            data-unit-value="fahrenheit"
+                        >
+                            <span>Fahrenheit (°F)</span>
+                            <span class="checkmark-icon"></span>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="unit-section">
+                        <div class="section-title">Wind Speed</div>
+                        <div
+                            class="unit-option selected"
+                            data-unit-type="windUnit"
+                            data-unit-value="kmh"
+                        >
+                            <span>km/h</span>
+                            <span class="checkmark-icon"></span>
+                        </div>
+                        <div class="unit-option" data-unit-type="windUnit" data-unit-value="mph">
+                            <span>mph</span>
+                            <span class="checkmark-icon"></span>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="unit-section">
+                        <div class="section-title">Precipitation</div>
+                        <div
+                            class="unit-option selected"
+                            data-unit-type="precipUnit"
+                            data-unit-value="mm"
+                        >
+                            <span>mm</span>
+                            <span class="checkmark-icon"></span>
+                        </div>
+                        <div class="unit-option" data-unit-type="precipUnit" data-unit-value="inch">
+                            <span>inch</span>
+                            <span class="checkmark-icon"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="container">
+            <section class="hero">
+                <!-- Main title -->
+                <h1 class="hero_title text-center">How's the sky looking today?</h1>
+                <!-- Search -->
+                <form class="search-form" id="search-form">
+                    <label for="search-input" class="input-wrapper">
+                        <span class="search-icon"></span>
+                        <input
+                            id="search-input"
+                            type="text"
+                            class="search-input"
+                            placeholder="Search for a place..."
+                        />
+                    </label>
+                    <button type="submit" id="search-button">Search</button>
+                </form>
+            </section>
+
+            <section class="weather-container">
+                <!-- Current weather -->
+                <div class="current-section">
+                    <div class="weather-card">
+                        <div>
+                            <h2 class="location">Lagos, Nigeria</h2>
+                            <p class="date">Weekday, MM DD, YYYY</p>
+                        </div>
+                        <div class="weather-details">
+                            <span
+                                class="weather-icon weather-icon--main"
+                                id="weather-icon"
+                                data-weather-code=""
+                            ></span>
+                            <strong class="temperature">0°</strong>
+                        </div>
+                    </div>
+                    <!-- Weather metrics -->
+                    <div class="metrics-grid">
+                        <div class="current-metrics">
+                            <div>Feels Like</div>
+                            <div class="metric-card" data-metric="feels">-</div>
+                        </div>
+                        <div class="current-metrics">
+                            <div>Humidity</div>
+                            <div class="metric-card" data-metric="humidity">-</div>
+                        </div>
+                        <div class="current-metrics">
+                            <div>Wind</div>
+                            <div class="metric-card" data-metric="wind">-</div>
+                        </div>
+                        <div class="current-metrics">
+                            <div>Precipitation</div>
+                            <div class="metric-card" data-metric="precipitation">-</div>
+                        </div>
+                    </div>
+                    <!-- Forecasts -->
+                    <div class="daily-forecast">
+                        <h2 class="forecast-title">Daily forecast</h2>
+                        <div class="day-cards">
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                            <div class="day-card">
+                                <div class="weekday"></div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="temp daily-high-low"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hourly forecast -->
+                <div class="hourly-forecast">
+                    <div class="hour-forecast-heading">
+                        <h3 class="forecast-title">Hourly forecast</h3>
+                        <select id="select" class="day-selector"></select>
+                    </div>
+                    <div class="hourly-cards">
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                        <div class="hour-card">
+                            <div>
+                                <div class="weather-icon" data-weather-code=""></div>
+                                <div class="time hourly-time"></div>
+                            </div>
+                            <div class="temp hourly-temp"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="container">
+            <div class="attribution">
+                Challenge by
+                <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by
+                <a href="#">Your Name Here</a>.
+            </div>
+        </footer>
+
+        <script type="module" src="./js/index.js"></script>
+    </body>
+</html>

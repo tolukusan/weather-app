@@ -38,3 +38,8 @@ npm-debug.log*
 *.pem
 .DS_Store
 Thumbs.db
+
+#Local info not important to the project
+TODO.md
+weather-test-data.json
+city-test-data.json
