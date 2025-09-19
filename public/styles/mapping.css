@@ -8,20 +8,20 @@
 
 .weather-icon[data-weather-code='0'],
 .weather-icon[data-weather-code='1'] {
-    background-image: url('/assets/images/icon-sunny.webp');
+    background-image: url('../assets/images/icon-sunny.webp');
 }
 
 .weather-icon[data-weather-code='2'] {
-    background-image: url('/assets/images/icon-partly-cloudy.webp');
+    background-image: url('../assets/images/icon-partly-cloudy.webp');
 }
 
 .weather-icon[data-weather-code='3'] {
-    background-image: url('/assets/images/icon-overcast.webp');
+    background-image: url('../assets/images/icon-overcast.webp');
 }
 
 .weather-icon[data-weather-code='45'],
 .weather-icon[data-weather-code='48'] {
-    background-image: url('/assets/images/icon-fog.webp');
+    background-image: url('../assets/images/icon-fog.webp');
 }
 
 .weather-icon[data-weather-code='51'],
@@ -29,7 +29,7 @@
 .weather-icon[data-weather-code='55'],
 .weather-icon[data-weather-code='56'],
 .weather-icon[data-weather-code='57'] {
-    background-image: url('/assets/images/icon-drizzle.webp');
+    background-image: url('../assets/images/icon-drizzle.webp');
 }
 
 .weather-icon[data-weather-code='61'],
@@ -40,7 +40,7 @@
 .weather-icon[data-weather-code='80'],
 .weather-icon[data-weather-code='81'],
 .weather-icon[data-weather-code='82'] {
-    background-image: url('/assets/images/icon-rain.webp');
+    background-image: url('../assets/images/icon-rain.webp');
 }
 
 .weather-icon[data-weather-code='71'],
@@ -49,11 +49,11 @@
 .weather-icon[data-weather-code='77'],
 .weather-icon[data-weather-code='85'],
 .weather-icon[data-weather-code='86'] {
-    background-image: url('/assets/images/icon-snow.webp');
+    background-image: url('../assets/images/icon-snow.webp');
 }
 
 .weather-icon[data-weather-code='95'],
 .weather-icon[data-weather-code='96'],
 .weather-icon[data-weather-code='99'] {
-    background-image: url('/assets/images/icon-storm.webp');
+    background-image: url('../assets/images/icon-storm.webp');
 }
