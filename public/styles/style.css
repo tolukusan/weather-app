@@ -75,7 +75,7 @@ header {
         display: inline-block;
         height: 100%;
         min-height: 1rem;
-        background-image: url('/assets/images/icon-units.svg');
+        background-image: url('../assets/images/icon-units.svg');
         background-position: center;
         background-repeat: no-repeat;
         width: 1rem;
@@ -84,7 +84,7 @@ header {
         display: inline-block;
         height: 100%;
         min-height: 1rem;
-        background-image: url('/assets/images/icon-dropdown.svg');
+        background-image: url('../assets/images/icon-dropdown.svg');
         background-position: center;
         background-repeat: no-repeat;
         width: 1rem;
@@ -145,7 +145,7 @@ header {
             display: inline-block;
             height: 100%;
             min-height: 1rem;
-            background-image: url('/assets/images/icon-checkmark.svg');
+            background-image: url('../assets/images/icon-checkmark.svg');
             background-position: center;
             background-repeat: no-repeat;
             width: 1rem;
@@ -192,7 +192,7 @@ header {
         display: inline-block;
         height: 100%;
         min-height: 3rem;
-        background-image: url('/assets/images/icon-search.svg');
+        background-image: url('../assets/images/icon-search.svg');
         background-position: center;
         background-repeat: no-repeat;
 
@@ -237,7 +237,7 @@ header {
 
 .weather-card {
     /* background-color: red; */
-    background-image: url('/assets/images/bg-today-small.svg');
+    background-image: url('../assets/images/bg-today-small.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -280,7 +280,7 @@ header {
     width: 3.5rem;
     height: 3.5rem;
     display: inline-block;
-    background-image: url('/assets/images/icon-sunny.webp');
+    background-image: url('../assets/images/icon-sunny.webp');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150%;
